@@ -3,7 +3,7 @@ import { renderHook, waitFor, act } from "@testing-library/react";
 
 const authState = { user: null as { id: string } | null, loading: true };
 const rolesResult = { data: [] as { role: string }[], error: null as unknown };
-const insertMock = vi.fn(async () => ({ error: null }));
+const insertMock = vi.fn(async (_row: unknown) => ({ error: null }));
 const selectSpy = vi.fn();
 
 vi.mock("@/integrations/supabase/client", () => ({
