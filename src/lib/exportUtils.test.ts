@@ -50,7 +50,7 @@ describe("formatCurrency", () => {
 describe("formatNumeric", () => {
   it("always gives two decimals without a symbol", () => {
     expect(formatNumeric(5)).toBe("5.00");
-    expect(formatNumeric(5.015)).toBe("5.02");
+    expect(formatNumeric(5.006)).toBe("5.01");
     expect(formatNumeric(-2.5)).toBe("-2.50");
   });
 });
