@@ -145,7 +145,7 @@ describe("downloadCSV", () => {
   afterEach(() => vi.restoreAllMocks());
 
   it("creates a link, clicks it and cleans up", () => {
-    const click = vi.fn();
+    const click = vi.spyOn(HTMLAnchorElement.prototype, "click").mockImplementation(() => {});
     const create = vi.spyOn(document, "createElement");
     downloadCSV("a,b", "report.csv");
     const link = create.mock.results[0].value as HTMLAnchorElement;
@@ -153,7 +153,7 @@ describe("downloadCSV", () => {
     expect(link.getAttribute("href")).toBe("blob:mock");
     expect(document.body.contains(link)).toBe(false);
     expect(URL.revokeObjectURL).toHaveBeenCalledWith("blob:mock");
-    expect(click).not.toHaveBeenCalled();
+    expect(click).toHaveBeenCalledTimes(1);
   });
 });
 
