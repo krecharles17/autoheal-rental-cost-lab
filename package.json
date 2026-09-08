@@ -2,6 +2,7 @@
   "name": "vite_react_shadcn_ts",
   "private": true,
   "version": "0.0.0",
+  "packageManager": "bun@1.4.0",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -61,7 +62,7 @@
     "react-day-picker": "^8.10.1",
     "react-dom": "^18.3.1",
     "react-hook-form": "^7.61.1",
-    "react-leaflet": "^5.0.0",
+    "react-leaflet": "^4.2.1",
     "react-leaflet-cluster": "^3.1.1",
     "react-phone-number-input": "^3.4.13",
     "react-resizable-panels": "^2.1.9",
